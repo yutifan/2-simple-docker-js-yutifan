@@ -1,0 +1,187 @@
+body {;
+  background: darkred;
+	color: white;
+}
+
+header {
+  background-color: darkred;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+    Font-Size: 60px;
+    font-family: "impact", fantasy
+}
+
+nav {
+	background-color: gray;
+	padding: 10px;
+}
+
+nav a:hover {
+  Color: white;
+	background-color:darkred;
+}
+
+main {
+	background-color: white;
+	color: black;
+	padding-top: 5px;
+	padding-bottom: 30px;
+	padding-left: 15px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+    font-size: 16px;
+}
+
+footer {
+    background-color: darkred;
+    margin: 0px;
+    padding:10px;
+}
+
+h2 {
+    font-size: 26px;
+    background-color: whitesmoke;
+    padding: 10px;
+}
+    
+h3 {
+    font-family: "impact", fantasy;
+    color: DarkRed;
+    font-size: 30px;
+}
+
+p {
+	margin-bottom: 40px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+/* Forms */
+
+label {
+	font-weight: bold;
+}
+
+input, textarea {
+	margin-top: 10px;
+}
+
+button {
+	padding: 10px;
+	background-color: darkred;
+	color: white;
+}
+
+button, .button {
+    border: 0px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+button:hover{
+    background: darkgray;
+    }
+
+select {
+    width: 350px;
+    margin-bottom: 20px;
+    }
+        
+option {
+    font-size: x-large;
+    }
+
+#comments {
+	width: 55%;
+	height: 130px;
+}
+
+.bigbox{
+	width: 300px;
+	height: 150px;
+	}
+
+.button {
+	padding: 10px;
+	background-color: darkred;
+	color: white;
+	}
+
+.specificheight{
+	line-height:.000001;
+}
+
+/* unvisited link */
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/*hover*/
+a:hover {
+    Color: darkred;
+	}
+	
+table {
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+
+th {
+  background-color: darkred;
+  color: white;
+}
+
+th,
+td {
+  width: 230px;
+  text-align: center;
+  border: .5px solid black;
+  padding: 5px;
+}
+
+
+/*tablesort*/
+th[role=columnheader]:not(.no-sort) {
+	cursor: pointer;
+}
+
+th[role=columnheader]:not(.no-sort):after {
+	content: '';
+	float: right;
+	margin-top: 7px;
+	border-width: 0 4px 4px;
+	border-style: solid;
+	border-color: #404040 transparent;
+	visibility: hidden;
+	opacity: 0;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+th[aria-sort=ascending]:not(.no-sort):after {
+	border-bottom: none;
+	border-width: 4px 4px 0;
+}
+
+th[aria-sort]:not(.no-sort):after {
+	visibility: visible;
+	opacity: 0.4;
+}
+
+th[role=columnheader]:not(.no-sort):hover:after {
+	visibility: visible;
+	opacity: 1;
+}
