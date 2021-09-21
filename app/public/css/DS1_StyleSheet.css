@@ -124,7 +124,7 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: white;
+  color: black;
 }
 
 /*hover*/
@@ -139,7 +139,7 @@ table {
 
 th {
   background-color: darkred;
-  color: white;
+  color: darkred;
 }
 
 th,
