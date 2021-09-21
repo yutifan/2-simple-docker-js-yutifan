@@ -47,4 +47,3 @@ const Offer = {
   }
   
 Vue.createApp(Offer).mount('#userApp');
-console.log("Z")
