@@ -1,4 +1,4 @@
-const Offer = {
+const Info = {
     data() {
       return {
         "person": {},
@@ -22,28 +22,31 @@ const Offer = {
             ]
         }
     },
-    computed:{
-        prettyBirthday( ) {
+    computed: {
+        prettyBirthday() {
             return dayjs(this.person.dob.date)
-            .format ('YYYY-M-D')
+            .format('D MMM YYYY');
+        }
+    },
+    methods: {
+        fetchUserData() {
+            fetch('https://randomuser.me/api/')
+            .then(response => response.json())
+            .then((parsedJson) => {
+                console.log(parsedJson);
+                this.person = parsedJson.results[0]
+                console.log("C");
+            })
+            .catch( err => {
+                console.error(err)
+            })
+
+            console.log("B");
         }
     },
     created() {
-        console.log("A");
-
-        fetch('https://randomuser.me/api/')
-        .then(response => response.json())
-        .then((parsedJson) => {
-            console.log(parsedJson);
-            this.person = parsedJson.results[0]
-            console.log("C");
-        })
-        .catch( err => {
-            console.error(err)
-        })
-
-        console.log("B");
+        this.fetchUserData();
     }
   }
   
-Vue.createApp(Offer).mount('#userApp');
+Vue.createApp(Info).mount('#userApp');
