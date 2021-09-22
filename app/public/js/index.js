@@ -1,7 +1,7 @@
 const Info = {
     data() {
       return {
-        "person": {},
+        "person": undefined,
         "offers": [
                 {
                     "id": 1,
