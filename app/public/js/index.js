@@ -25,7 +25,7 @@ const Info = {
     computed: {
         prettyBirthday() {
             return dayjs(this.person.dob.date)
-            .format('D MMM YYYY');
+            .format('YYYY/MM/DD');
         }
     },
     methods: {
