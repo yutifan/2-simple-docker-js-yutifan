@@ -25,9 +25,9 @@
  
     <main>
 
-    <div id="userApp">
+    <div id="userapp">
         <div v-if="person">
-            <img v-bind:src="person.picture.large">           
+            <p><img v-bind:src="person.picture.large"></p>
             <p>Name: {{ person.name.first }} {{ person.name.last }}</p>
             <p>Country of Origin: {{ person.location.country }}</p>
             <p>Birthday (Year/Month/Day): {{ prettyBirthday }}</p>
