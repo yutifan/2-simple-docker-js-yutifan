@@ -9,6 +9,7 @@
     
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <title>Book Info</title>
     </head>
 
 <body> 
@@ -22,55 +23,62 @@
     <main>
 <h2>Books </h2><br>
 
-<div id="offerApp" class="container">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Authors</th>
-            <th>Year Published</th>
-            <th>Publisher</th>
-            <th>Page Count</th>
-            <th>MSRP</th>
-          </tr>
-        </thead>
-          <tbody>
-              <tr v-for="b in books">
-                  <td>{{ b.title }}</td>
-                  <td>{{ b.author }}</td>
-                  <td>{{ b.years_published }}</td>
-                  <td>{{ b.publisher }}</td>
-                  <td>{{ b.page_count }}</td>
-                  <td>{{ prettyDollar(b.msrp) }}</td>
-              </tr>
-          </tbody>
-      </table>
+  <div id="offerApp" class="container">
+    <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Authors</th>
+                  <th>Year Published</th>
+                  <th>Publisher</th>
+                  <th>Page Count</th>
+                  <th>MSRP</th>
+                </tr>
+              </thead>
+                <tbody>
+                    <tr v-for="b in books">
+                        <td>{{ b.title }}</td>
+                        <td>{{ b.author }}</td>
+                        <td>{{ b.years_published }}</td>
+                        <td>{{ b.publisher }}</td>
+                        <td>{{ b.page_count }}</td>
+                        <td>{{ prettyDollar(b.msrp) }}</td>               
+                    </tr>
+                </tbody>
+            </table>
+          
+        <h3>Book</h3>
+        <form v-on:submit.prevent="postNewBook">
+          <div class="mb-3">
+            <label for="Title" class="form-label">Title</label>
+            <input type="text" v-model="bookForm.title" class="form-control" id="Title">
+          </div>
+          <div class="mb-3">
+            <label for="Author" class="form-label">Author</label>
+            <input type="text" v-model="bookForm.author" class="form-control" id="Author">
+          </div>
+          <div class="mb-3">
+            <label for="Year Published" class="form-label">Year Published</label>
+            <input type="number" v-model="bookForm.years_published" class="form-control" id="Year Published">
+          </div>
+          <div class="mb-3">
+            <label for="Publisher" class="form-label">Publisher</label>
+            <input type="text" v-model="bookForm.publisher" class="form-control" id="Publisher">
+          </div>
+          <div class="mb-3">
+            <label for="Page Count" class="form-label">Page Count</label>
+            <input type="number" v-model="bookForm.page_count" class="form-control" id="Page Count">
+          </div>
+          <div class="mb-3">
+            <label for="MSRP" class="form-label">MSRP</label>
+            <input type="number" v-model="bookForm.msrp" class="form-control" id="MSRP">
+          </div>    
+          <button type="submit" class="btn btn-primary">Add Book</button>
+        </form>
     </div>
+  </div>
 
-  <form>
-    <div class="form-row">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Title">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Author">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Year Published">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Publisher">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Page Count">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="MSRP">
-      </div>
-    </div>
-    <br>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
 
     </main>
    
