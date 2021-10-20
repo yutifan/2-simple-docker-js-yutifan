@@ -44,6 +44,11 @@ $stmt->execute([
   $_POST['msrp']
 ]);
 
+if (!$stmt -> commit()) {
+  echo "Commit transaction failed";
+  exit();
+}
+
 // Get auto-generated PK from DB
 // https://www.php.net/manual/en/pdo.lastinsertid.php
 // $pk = $db->lastInsertId();  
