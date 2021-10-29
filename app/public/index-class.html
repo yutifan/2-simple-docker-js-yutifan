@@ -69,7 +69,6 @@
                         <td>
                           <button type="button" v-on:click="handleEditOffer(offer)" class="btn btn-outline-secondary btn-sm">Edit</button>
                           <button type="button" v-on:click="postDeleteOffer(offer)" class="btn btn-outline-secondary btn-sm">Delete</button>
-
                         </td>
                     </tr>
                 </tbody>
@@ -105,7 +104,8 @@
               <button type="submit" class="btn btn-primary">{{ selectedOffer === null ? "Add " : "Edit " }} Offer</button>
               <button type="button" class="btn btn-outline-secondary" 
                  v-if="selectedOffer"
-                 v-on:click="handleResetEdit">Cancel Edit</button>
+                 v-on:click="handleResetEdit">Cancel Edit
+              </button>
             </form>
             <div class="noOffers" v-if="! offers.length">
               <h3>No offers. 😥</h3>

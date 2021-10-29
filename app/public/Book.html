@@ -23,7 +23,7 @@
     <main>
 <h2>Books </h2><br>
 
-  <div id="offerApp" class="container">
+  <div id="bookApp" class="container">
     <div>
             <table class="table">
               <thead>
@@ -33,8 +33,8 @@
                   <th>Year Published</th>
                   <th>Publisher</th>
                   <th>Page Count</th>
-                  <th>MSRP</th>
-                </tr>
+                  <th>MSRP</th>            
+                </tr>              
               </thead>
                 <tbody>
                     <tr v-for="b in books">
@@ -43,13 +43,17 @@
                         <td>{{ b.years_published }}</td>
                         <td>{{ b.publisher }}</td>
                         <td>{{ b.page_count }}</td>
-                        <td>{{ prettyDollar(b.msrp) }}</td>               
+                        <td>{{ prettyDollar(b.msrp) }}</td>
+                        <td>
+                          <button type="button" v-on:click="handleEditBook(b)" class="btn btn-outline-secondary btn-sm">Edit</button>
+                          <button type="button" v-on:click="postDeleteBook(b)" class="btn btn-outline-secondary btn-sm">Delete</button>
+                        </td>                                       
                     </tr>
                 </tbody>
             </table>
           
         <h3>Book</h3>
-        <form v-on:submit.prevent="postNewBook">
+        <form v-on:submit.prevent="postBook">
           <div class="mb-3">
             <label for="Title" class="form-label">Title</label>
             <input type="text" v-model="bookForm.title" class="form-control" id="Title">
@@ -74,7 +78,11 @@
             <label for="MSRP" class="form-label">MSRP</label>
             <input type="number" v-model="bookForm.msrp" class="form-control" id="MSRP">
           </div>    
-          <button type="submit" class="btn btn-primary">Add Book</button>
+          <button type="submit" class="btn btn-primary">{{ selectedBook === null ? "Add " : "Edit " }} Book</button>
+          <button type="button" class="btn btn-outline-secondary" 
+             v-if="selectedBook"
+             v-on:click="handleResetEdit">Cancel Edit
+          </button>
         </form>
     </div>
   </div>
@@ -86,7 +94,7 @@
         <img src="img/kelley_logo.png" alt="kelley_logo" width="100">
     </footer>
 
-    <script src="js/index.js"></script> 
+    <script src="js/index-book.js"></script> 
 
 </body>
 </html>
